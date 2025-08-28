@@ -1,0 +1,104 @@
+/* =================== */
+/* About Section */
+.about-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--text-main);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================== */
+/* Skills Section Container */
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: rgba(15, 15, 26, 0.6); /* semi-transparent dark */
+  backdrop-filter: blur(12px); /* frosted glass effect */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.skills-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Row layout: heading left, skills right */
+.skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(255, 64, 129, 0.1));
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 245, 160, 0.3), 0 0 15px rgba(255, 64, 129, 0.2);
+}
+
+/* Category Title */
+.skill-heading {
+  flex: 0 0 180px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+}
+
+/* Skill badges container */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Individual skill badges */
+.skill-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-pink));
+  color: #fff;
+  font-weight: 600;
+  cursor: default;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.skill-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 245, 160, 0.3);
+  background: linear-gradient(135deg, var(--accent-neon), var(--accent-pink));
+}
+
+/* Section heading */
+.skills-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0 1.5rem;
+  color: var(--accent-neon);
+  text-shadow: 0 0 5px var(--accent-neon), 0 0 15px var(--accent-neon);
+}

@@ -1,0 +1,95 @@
+.hero { 
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* Hero portrait covers section */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 0;
+  filter: brightness(1);
+}
+
+/* Circular mask */
+.hero-mask {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,1);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: left 0.05s, top 0.05s;
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.hero-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text & buttons styling */
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+.hero .highlight { color: var(--accent-neon); }
+.hero h2.typing { 
+  font-size: 1.5rem; 
+  margin-bottom: 20px; 
+  border-right: 2px solid var(--accent-neon); 
+  white-space: nowrap; 
+  overflow: hidden; 
+  width: 0; 
+  animation: typing 4s steps(40,end) forwards, blink 0.75s step-end infinite; 
+}
+@keyframes typing { from { width:0 } to { width:100% } }
+@keyframes blink { 50% { border-color: transparent } }
+.hero p { font-size:1.1rem; margin-bottom:25px; color:var(--text-dim); }
+.hero-buttons { display:flex; justify-content:center; gap:15px; }
+.btn { padding:10px 20px; background:var(--accent-neon); color:var(--bg-main); text-decoration:none; border-radius:5px; transition: background 0.3s ease; }
+.btn:hover { background: var(--accent-blue); color: var(--bg-main); }
+.btn-outline { border:2px solid var(--accent-neon); background:transparent; color:var(--accent-neon); }
+.btn-outline:hover { background:var(--accent-neon); color:var(--bg-main); }
+
+/* ============================ */
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 2.5rem; }
+  .hero h2.typing { font-size: 1.3rem; }
+  .hero p { font-size: 1rem; }
+  .hero-mask { width: 180px; height: 180px; }
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+  .hero h2.typing { font-size: 1.1rem; }
+  .hero p { font-size: 0.95rem; }
+  .hero-mask { width: 150px; height: 150px; }
+  .hero-buttons { flex-direction: column; gap: 10px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.6rem; }
+  .hero h2.typing { font-size: 1rem; }
+  .hero p { font-size: 0.9rem; }
+  .hero-mask { width: 120px; height: 120px; }
+}
