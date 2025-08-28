@@ -26,29 +26,46 @@ const projects = [
 ];
 
 export default function Projects() {
+  const highlightWords = ["AI", "FAISS", "LLaMA", "NER", "BERT", "LLM"];
+
   return (
     <section id="projects" className="section projects">
-      <h2>My Work</h2>
+      <h2 className="mask-text">My Work</h2>
       <div className="project-grid irregular">
         {projects.map((p, i) => (
           <div className={`project-card project-${i}`} key={i}>
             <h3 className="mask-text">{p.title}</h3>
             <p>
-              {p.desc.split(" ").map((word, idx) =>
-                ["AI", "FAISS", "LLaMA", "NER"].includes(word.replace(/[^a-zA-Z]/g,"")) ? (
-                  <span key={idx} className="highlight">{word} </span>
-                ) : (
-                  word + " "
-                )
-              )}
+              {p.desc.split(" ").map((word, idx) => {
+                const cleaned = word.replace(/[^a-zA-Z]/g, "");
+                if (highlightWords.includes(cleaned)) {
+                  return (
+                    <span key={idx} className="highlight">
+                      {word}{" "}
+                    </span>
+                  );
+                }
+                return word + " ";
+              })}
             </p>
+
             <div className="project-links">
               {p.live && (
-                <a href={p.live} target="_blank" rel="noreferrer" className="icon-link">
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-link"
+                >
                   <FaExternalLinkAlt />
                 </a>
               )}
-              <a href={p.github} target="_blank" rel="noreferrer" className="icon-link">
+              <a
+                href={p.github}
+                target="_blank"
+                rel="noreferrer"
+                className="icon-link"
+              >
                 <FaGithub />
               </a>
             </div>
