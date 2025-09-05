@@ -27,7 +27,7 @@ export default function Hero() {
     window.addEventListener("touchmove", handleTouchMove);
 
     // Set initial mask position at center
-    const centerX = window.innerWidth / 2;
+    const centerX = -window.innerWidth;
     const centerY = window.innerHeight / 2;
     moveMask(centerX, centerY);
 
