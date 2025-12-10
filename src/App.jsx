@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // ⬅️ ADDED ROUTING IMPORTS
-import { Analytics } from '@vercel/analytics/next';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -110,7 +109,6 @@ export default function App() {
 
     return (
         <Router> 
-        <Analytics />
             {loading && <Loader setLoading={setLoading} />}
             
             {contentMounted && (
