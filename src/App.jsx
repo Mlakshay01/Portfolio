@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // ⬅️ ADDED ROUTING IMPORTS
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
