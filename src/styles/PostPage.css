@@ -1,0 +1,142 @@
+/* ==================================== */
+/* 1. CONTAINER & LAYOUT STYLES         */
+/* ==================================== */
+
+.post-container {
+    /* Ensure the article takes up the viewport height below the fixed Navbar */
+    min-height: 100vh; 
+    padding: 100px 20px 80px 20px; /* Top padding clears Navbar */
+    
+    /* Center the content container and limit its width for optimal reading */
+    max-width: 900px;
+    margin: 0 auto;
+    
+    /* Inherit the dark theme background (assuming it's set on the body/root) */
+    color: #f0f0f0; /* Light text for readability */
+}
+
+.loading-state,
+.error-state {
+    text-align: center;
+    padding: 150px 20px;
+    font-size: 1.2rem;
+    color: #5bbcc4;
+}
+
+/* ==================================== */
+/* 2. POST HEADER STYLES                */
+/* ==================================== */
+
+.post-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.post-title {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #ffffff; /* Bright white title */
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 1rem;
+    color: #999; /* Subtle grey for metadata */
+    font-style: italic;
+}
+
+.post-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 30px auto 0 auto;
+    width: 60%;
+}
+
+/* ==================================== */
+/* 3. MARKDOWN CONTENT STYLING          */
+/* ==================================== */
+
+.post-content {
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.post-content p {
+    margin-bottom: 1.5em;
+}
+
+/* Headings */
+.post-content h2,
+.post-content h3 {
+    color: #5bbcc4; /* Use the theme highlight color */
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 5px;
+}
+
+.post-content h2 {
+    font-size: 2rem;
+}
+
+.post-content h3 {
+    font-size: 1.5rem;
+}
+
+/* Lists */
+.post-content ul,
+.post-content ol {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+}
+
+/* Links */
+.post-content a {
+    color: #007bff; /* Standard link color, adjust if needed */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.post-content a:hover {
+    color: #5bbcc4; 
+    text-decoration: underline;
+}
+
+/* Blockquotes */
+.post-content blockquote {
+    margin: 2em 0;
+    padding: 10px 20px;
+    border-left: 4px solid #5bbcc4; /* Highlight bar */
+    background: rgba(255, 255, 255, 0.05); /* Subtle dark background */
+    font-style: italic;
+    color: #ccc;
+}
+
+/* Code Blocks */
+.post-content pre {
+    background: #1a2a3a; /* Darker background for code */
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 2em 0;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+.post-content code {
+    /* Inline code styling */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.95em;
+}
+
+.post-content pre code {
+    /* Override for code inside <pre> */
+    background: none;
+    padding: 0;
+}

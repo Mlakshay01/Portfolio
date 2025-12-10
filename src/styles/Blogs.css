@@ -1,0 +1,182 @@
+/* ==================================== */
+/* 1. SECTION & LAYOUT STYLES - GLOSSY BACKGROUND   */
+/* ==================================== */
+
+.blogs-section {
+    padding: 40px 20px;
+    /* --- REMOVED: background-color: #f4f7f9; --- */
+    /* Assuming the main page background (the dark green/blue) shows through */
+    
+    /* Optional: Add a subtle inner shadow or a light edge if needed for definition */
+}
+
+/* Container for the 3 blog cards */
+.blog-posts-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 20px;
+    margin-top: 30px;
+    background: #17373E;
+    padding: 10vw;
+    
+}
+
+/* Link to the main blog page - keep these vibrant */
+.view-all-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-all-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #5bbcc4; /* Adjusted to a lighter, complementary theme color */
+    color: #1a2a3a; /* Dark text for contrast */
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    align-content: center;
+    font-size: large;
+}
+
+.view-all-button:hover {
+    background-color: #49a5ad;
+    color: #fff;
+}
+
+/* ==================================== */
+/* 2. HEADING & ROTATIONAL EFFECT       */
+/* ==================================== */
+.title-container{
+    display: flex;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #f0f0f0 !important; /* Use a bright white/off-white for text against the dark theme */
+    font-weight: 800;
+    position: relative; 
+    z-index: 2;
+}
+
+.image{
+    background-color: white; 
+    
+    /* 2. Set the image as the mask */
+    mask-image: url('/writing-icon.png');
+    -webkit-mask-image: url('/writing-icon.png'); /* For cross-browser compatibility */
+    
+    /* 3. Define how the mask should behave */
+    mask-size: contain; 
+    -webkit-mask-size: contain;
+    
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    
+    mask-position: center;
+    -webkit-mask-position: center;
+
+    width: 300px;
+    height: 200px;
+    position: relative;
+    left: -30%;
+    z-index: 1;
+}
+
+/* The container for the rotated text */
+.title-highlight-container {
+    position: absolute;
+    top: -20px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    overflow: hidden; 
+    width: 100%; 
+    height: 100px; 
+}
+
+/* The actual text with the rotation */
+.title-highlight {
+    display: inline-block; 
+    font-size: 1.2rem;
+    color: #fff; /* Primary color for highlight */
+    opacity: 0.15; /* Slightly less opaque for visibility */
+    white-space: nowrap; 
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg); 
+    
+    font-weight: 900;
+    letter-spacing: 5px;
+    z-index: 0;
+}
+
+
+/* ==================================== */
+/* 3. BLOG CARD STYLES - GLASSMORPHISM IMPLEMENTATION */
+/* ==================================== */
+
+.blog-card-link {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.blog-card {
+    /* 1. Transparent Background */
+    background: rgba(255, 255, 255, 0.1); /* Light, transparent white */
+    
+    /* 2. BLUR EFFECT (The Glass look) */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    
+    /* 3. LIGHT BORDER (The Reflected Edge) */
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    
+    border-radius: 16px; /* Slightly larger border-radius looks better with glass */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    
+    padding: 25px;
+    width: 300px; 
+    min-height: 250px; 
+    display: flex;
+    flex-direction: column;
+    
+    /* Ensure text is bright */
+    color: #f0f0f0; 
+    
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px); 
+    /* Slightly less transparent on hover for a 'pop' effect */
+    background: rgba(255, 255, 255, 0.15); 
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card-title {
+    font-size: 1.4rem;
+    color: #fff; /* White title for readability */
+    margin-bottom: 10px;
+    /* Use a light, transparent divider */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
+    padding-bottom: 8px;
+}
+
+.blog-card-excerpt {
+    font-size: 0.95rem;
+    color: #d8d8d8; /* Light gray for body text */
+    flex-grow: 1; 
+}
+
+.read-more-link {
+    display: block;
+    margin-top: 15px;
+    color: #5bbcc4; /* Use a complementary light blue/green color */
+    font-weight: 600;
+}

@@ -1,30 +1,49 @@
 import "../styles/Contact.css";
+// You might want to import a relevant icon here, like FaEnvelope or FaHandshake
+// import { FaEnvelope, FaHandshake } from "react-icons/fa"; 
 
 export default function Contact() {
   return (
     <section id="contact" className="section contact">
-      <h2 className="contact-title"><hr className="my-custom-line"></hr>Let’s Build Something Awesome Together<hr className="my-custom-line"></hr></h2>
+      
+      {/* 1. Stronger, more direct main heading */}
+      <h2 className="contact-title">
+        <span className="my-custom-line"></span>
+        Ready to Launch Your Next Project? 
+        <span className="my-custom-line"></span>
+      </h2>
+      
+      {/* 2. Subheading emphasizes expertise and specific value */}
       <p className="contact-sub">
-        I’m always excited to connect with like-minded creators, developers, and innovators.  
-        Whether it’s a project, collaboration, or just a friendly chat about AI & tech — I’d love to hear from you!
+        I’m currently open to new <b>AI development</b>, <b>full-stack engineering</b>
+        , and <b>consulting</b> opportunities. 
+        Whether you need a custom LLM integration, an optimized data pipeline, or just a technical discussion on the latest trends, let's connect.
       </p>
 
+      {/* 3. Actionable Contact Card/Button */}
       <div className="contact-card">
         <a
           className="btn-primary"
           href="mailto:lakshaymalik.dev@gmail.com"
         >
-          Say Hello
+          {/* Enhanced CTA text */}
+          Start the Conversation
         </a>
       </div>
 
+      {/* 4. Clear fallback with direct email access */}
       <p className="contact-email">
-        Prefer email? Reach me at: <strong>lakshaymalik.dev@gmail.com</strong>
+        Or, send a direct message to: 
+        <a href="mailto:lakshaymalik.dev@gmail.com">
+          <strong>lakshaymalik.dev@gmail.com</strong>
+        </a>
       </p>
 
+      {/* 5. Professional closing note */}
       <p className="contact-note">
-        I usually respond within 24 hours. Let’s make your idea come to life!
+        I look forward to hearing about your project || opportunity! I typically reply within 24 hours.
       </p>
+      
     </section>
   );
 }

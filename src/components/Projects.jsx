@@ -18,11 +18,11 @@ const projects = [
     github: "https://github.com/Mlakshay01/BERT-NER-FINE-TUNED",
   },
   {
-    title: "🌙 Moon-Mom",
-    desc: "An experimental project exploring AI-driven automation workflows and smart system design. Focuses on modular architecture and scalable AI agent pipelines.",
-    live: "https://moon-mom.vercel.app/",
-    github: "https://github.com/Mlakshay01/Moon-Mom",
-  },
+    title: "🌙 Moon-Mom (E-commerce Platform)", // Refined Title
+    desc: "A modern e-commerce platform for a baby cloth brand. Features include a dynamic product catalog, intuitive UI/UX design, and integrated shopping cart functionality built with React and a focus on responsive, mobile-first design.", // Corrected, specific description
+    live: "https://moon-mom.vercel.app/",
+    github: "https://github.com/Mlakshay01/Moon-Mom",
+  },
 ];
 
 export default function Projects() {

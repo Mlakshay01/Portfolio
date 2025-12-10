@@ -73,6 +73,10 @@
   margin-bottom: 0.5rem;
 }
 
+.contact-email a{
+  color: aliceblue;
+}
+
 .contact-note {
   font-size: 0.9rem;
   color: var(--text-dim);
