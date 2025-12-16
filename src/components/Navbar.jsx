@@ -1,6 +1,7 @@
 import { FaLinkedin } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom"; // ⬅️ IMPORTED Link and useNavigate
 import React from 'react';
+import "../styles/Navbar.css";
 
 // Helper function to handle scrolling after navigation
 const scrollToSection = (hash) => {
@@ -34,7 +35,7 @@ export default function Navbar() {
       <nav className="navbar">
         <h2 className="logo">
             {/* Logo always navigates to the top of the homepage */}
-            <Link to="/" onClick={() => scrollToSection("#hero")}>Lakshay Malik</Link>
+            <Link to="/" onClick={() => scrollToSection("#hero")}><img src="/LMlogo.png" /></Link>
         </h2>
         <ul>
             {/* Use Link components with the new handler */}

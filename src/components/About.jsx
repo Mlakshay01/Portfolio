@@ -45,8 +45,7 @@ export default function About() {
         {/* IMPROVEMENT 1: Focus on C++/Systems and Agent Development */}
         <p className={`about-text ${visible ? "visible" : ""}`}>
           I am a <b><i>Systems Engineer </i></b>specializing in <b><i>GenAI</i></b>, crafting <span className="liquid">low-latency</span>, 
-          <span className="liquid"> resource-efficient</span>, and 
-          <span className="liquid"> deployable</span> AI Agents.
+          <span className="liquid"> resource-efficient</span>, and <span className="liquid">deployable</span> AI Agents.
         </p>
         
         {/* IMPROVEMENT 2: Explicitly link C++ and Deployment goals */}

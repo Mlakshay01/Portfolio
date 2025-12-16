@@ -50,7 +50,7 @@ export default function Hero() {
         <h1>
           Hello, I’m <span className="highlight">Lakshay Malik</span>
         </h1>
-        <h2 className="typing">Web Developer | AI Enthusiast | Engineer</h2>
+        <h2 className="typing">Generative AI Engineer | Full-Stack Developer | LLM Systems Architect</h2>
         <p>I build modern, scalable web applications and AI-driven solutions.</p>
         <div className="hero-buttons">
           <a href="#projects" className="btn">

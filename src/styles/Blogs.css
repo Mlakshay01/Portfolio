@@ -4,13 +4,9 @@
 
 .blogs-section {
     padding: 40px 20px;
-    /* --- REMOVED: background-color: #f4f7f9; --- */
-    /* Assuming the main page background (the dark green/blue) shows through */
-    
-    /* Optional: Add a subtle inner shadow or a light edge if needed for definition */
 }
 
-/* Container for the 3 blog cards */
+/* Container for the blog cards */
 .blog-posts-container {
     display: flex;
     justify-content: center;
@@ -141,7 +137,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     
     padding: 25px;
-    width: 300px; 
+    max-width: 300px; 
     min-height: 250px; 
     display: flex;
     flex-direction: column;
@@ -161,7 +157,7 @@
 
 .blog-card-title {
     font-size: 1.4rem;
-    color: #fff; /* White title for readability */
+    color: cyan; /* White title for readability */
     margin-bottom: 10px;
     /* Use a light, transparent divider */
     border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
@@ -179,4 +175,26 @@
     margin-top: 15px;
     color: #5bbcc4; /* Use a complementary light blue/green color */
     font-weight: 600;
+}
+
+@media screen and (max-width:600px){
+    .blog-posts-container{
+        padding: 30px;
+    }
+    .title-container{
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+    }
+    .title-container h2{
+        font-size: 2rem;
+    }
+    .title-container > .image{
+        left: -10%;
+        width: 150px;
+        height: 100px;
+    }
 }
