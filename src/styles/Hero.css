@@ -47,6 +47,7 @@
 .hero-content.fade-in {
   opacity: 1;
   transform: translateY(0);
+  width: 90vw;
 }
 
 /* Text & buttons styling */
