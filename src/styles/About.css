@@ -88,6 +88,8 @@
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
+
+
 .skill-badge:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 245, 160, 0.3);
