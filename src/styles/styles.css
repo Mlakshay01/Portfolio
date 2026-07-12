@@ -155,6 +155,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: wave 2.5s ease-in-out infinite;
+  margin: auto 4px;
 }
 
 @keyframes wave {

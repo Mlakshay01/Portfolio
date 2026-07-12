@@ -5,12 +5,18 @@ const projects = [
   {
     title: "🔗 Hybrid ACO-PSO Link Predictor",
     desc: "Engineered a novel hybrid metaheuristic technique for link prediction in social networks by integrating Ant Colony Optimization (ACO) for community detection and Particle Swarm Optimization (PSO) for feature weight tuning. Achieved a near-perfect AUC of 0.9931 on the Facebook dataset, significantly outperforming standalone algorithms through optimized topological measures.",
-    github: "https://github.com/Mlakshay01/ACO-PSO-HYBRID-ALGO", 
+    github: "https://github.com/Mlakshay01/ACO-PSO-HYBRID-ALGO",
+  },
+  {
+    title: "🧠 You2.0 – AI-Powered Lifestyle Monitoring Platform",
+    desc: "Developed a full-stack AI-powered lifestyle monitoring platform that combines food recognition, facial mood recognition, activity tracking, nutrition analysis, wellness scoring, and personalized health recommendations. Built with FastAPI, MongoDB Atlas, PyTorch, EfficientNet-B0, Hugging Face, and Groq API to integrate multiple AI models into a unified wellness ecosystem.",
+    github: "https://github.com/Mlakshay01/YOU2.O-MAJOR-PROJECT",
   },
   {
     title: "🤖 Multi-Agent AI Orchestration Benchmark",
     desc: "Architected a research-driven evaluation platform to benchmark Multi-Agent Systems (MAS) including LangChain, CrewAI, and AutoGen. Evaluated complex task automation and code generation using LLaMA 3.2 via Ollama, providing real-time performance analytics and token-cost comparisons through an interactive Streamlit dashboard.",
-    github: "https://github.com/Mlakshay01/Empirical-Evaluation-of-Multi-Agent-Orchestration-Frameworks-for-Complex-Task-Automation",
+    github:
+      "https://github.com/Mlakshay01/Empirical-Evaluation-of-Multi-Agent-Orchestration-Frameworks-for-Complex-Task-Automation",
   },
   {
     title: "🤖 Autonomous Multi-Chatbot Platform",
@@ -33,16 +39,16 @@ const projects = [
     live: "https://moon-mom.vercel.app/",
     github: "https://github.com/Mlakshay01/Moon-Mom",
   },
+   {
+    title: "📄 AI Resume & ATS Analyzer",
+    desc: "Engineered a full-stack AI platform to automate resume screening using FastAPI and PostgreSQL . Utilized local LLMs via Ollama to extract structured data and generate ATS scores, quality ratings, and personalized career improvement recommendations.",
+    github: "https://github.com/Mlakshay01/Resume-Analyzer",
+  },
   {
     title: "🧙‍♂️ WizardZ – Marketing Architecture",
     desc: "Built a modern digital marketing website featuring high-performance animations and smooth-scroll UI components. Optimized frontend delivery using React and advanced CSS techniques to ensure cross-browser compatibility and rapid page load speeds.",
     live: "https://mlakshay01.github.io/Marketing-Website/",
     github: "https://github.com/Mlakshay01/Marketing-Website",
-  },
-  {
-    title: "📄 AI Resume & ATS Analyzer",
-    desc: "Engineered a full-stack AI platform to automate resume screening using FastAPI and PostgreSQL . Utilized local LLMs via Ollama to extract structured data and generate ATS scores, quality ratings, and personalized career improvement recommendations.",
-    github: "https://github.com/Mlakshay01/Resume-Analyzer",
   },
   {
     title: "🖼️ SnapFind – Real-Time Image Search",
@@ -54,12 +60,40 @@ const projects = [
 
 export default function Projects() {
   const highlightWords = [
-    "AI", "LLM", "LLMs", "LLaMA", "BERT", "PyTorch", "React", "React.js", 
-    "FastAPI", "PostgreSQL", "Python", "RAG", "FAISS", "Vector", 
-    "Transformers", "NLP", "NER", "Multi-Agent", "Retrieval-Augmented",
-    "ACO", "PSO", "Metaheuristic", "Optimization", "AUC", "Topological", 
-    "Hybrid", "Full-Stack", "Architecture", "Automation", "Benchmarking", 
-    "Engineered", "RESTful APIs", "Vanilla JavaScript", "CSS"
+    "AI",
+    "LLM",
+    "LLMs",
+    "LLaMA",
+    "BERT",
+    "PyTorch",
+    "React",
+    "React.js",
+    "FastAPI",
+    "PostgreSQL",
+    "Python",
+    "RAG",
+    "FAISS",
+    "Vector",
+    "Transformers",
+    "NLP",
+    "NER",
+    "Multi-Agent",
+    "Retrieval-Augmented",
+    "ACO",
+    "PSO",
+    "Metaheuristic",
+    "Optimization",
+    "AUC",
+    "Topological",
+    "Hybrid",
+    "Full-Stack",
+    "Architecture",
+    "Automation",
+    "Benchmarking",
+    "Engineered",
+    "RESTful APIs",
+    "Vanilla JavaScript",
+    "CSS",
   ];
 
   return (
@@ -73,26 +107,30 @@ export default function Projects() {
               {p.desc.split(" ").map((word, idx, array) => {
                 // 1. Clean the word but KEEP hyphens and dots (for React.js)
                 const cleaned = word.replace(/[^a-zA-Z.-]/g, "").toLowerCase();
-                
+
                 // 2. Check for single word match
                 const isSingleMatch = highlightWords.some(
-                  (h) => h.toLowerCase() === cleaned
+                  (h) => h.toLowerCase() === cleaned,
                 );
 
                 // 3. Check for multi-word phrase match (e.g., "RESTful APIs")
                 // This checks if the current word + the next word matches a phrase
-                const nextWord = array[idx + 1] ? array[idx + 1].replace(/[^a-zA-Z.-]/g, "").toLowerCase() : "";
+                const nextWord = array[idx + 1]
+                  ? array[idx + 1].replace(/[^a-zA-Z.-]/g, "").toLowerCase()
+                  : "";
                 const phrase = `${cleaned} ${nextWord}`;
                 const isPhraseMatch = highlightWords.some(
-                  (h) => h.toLowerCase() === phrase
+                  (h) => h.toLowerCase() === phrase,
                 );
 
                 // 4. Special handling: if this word is the start of a matched phrase, highlight it
                 // If the PREVIOUS word was the start of a phrase, highlight this one too
-                const prevWord = array[idx - 1] ? array[idx - 1].replace(/[^a-zA-Z.-]/g, "").toLowerCase() : "";
+                const prevWord = array[idx - 1]
+                  ? array[idx - 1].replace(/[^a-zA-Z.-]/g, "").toLowerCase()
+                  : "";
                 const prevPhrase = `${prevWord} ${cleaned}`;
                 const isPartOfPrevPhrase = highlightWords.some(
-                  (h) => h.toLowerCase() === prevPhrase
+                  (h) => h.toLowerCase() === prevPhrase,
                 );
 
                 if (isSingleMatch || isPhraseMatch || isPartOfPrevPhrase) {
@@ -108,11 +146,21 @@ export default function Projects() {
 
             <div className="project-links">
               {p.live && (
-                <a href={p.live} target="_blank" rel="noreferrer" className="icon-link">
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-link"
+                >
                   <FaExternalLinkAlt />
                 </a>
               )}
-              <a href={p.github} target="_blank" rel="noreferrer" className="icon-link">
+              <a
+                href={p.github}
+                target="_blank"
+                rel="noreferrer"
+                className="icon-link"
+              >
                 <FaGithub />
               </a>
             </div>

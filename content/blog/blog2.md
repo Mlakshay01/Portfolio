@@ -331,3 +331,22 @@ endl
 unless you explicitly need to flush the output buffer.
 
 These small changes provide fast, clean, and idiomatic C++ I/O suitable for handling very large inputs and outputs.
+
+---
+
+# References
+
+1. **cppreference**
+   - https://en.cppreference.com/w/cpp/io/ios_base/sync_with_stdio
+   - https://en.cppreference.com/w/cpp/io/basic_ios/tie
+   - https://en.cppreference.com/w/cpp/io/manip/endl
+
+2. **ISO C++ Standard Library Documentation**
+   - Input/Output Library
+
+3. **International Olympiad in Informatics (IOI)**
+   - Standard Input and Output
+   - https://ioinformatics.org/
+
+4. **Benchmark**
+   - Execution times reported in this article were measured by the author using GCC (MinGW) on Windows with `std::chrono::high_resolution_clock`.
