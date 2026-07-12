@@ -35,7 +35,7 @@ export default function Contact() {
       <p className="contact-email">
         Or, send a direct message to: 
         <a href="mailto:lakshaymalik.dev@gmail.com">
-          <strong>lakshaymalik.dev@gmail.com</strong>
+          <strong> lakshaymalik.dev@gmail.com</strong>
         </a>
       </p>
 

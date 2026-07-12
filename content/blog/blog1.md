@@ -7,7 +7,6 @@ author: "Lakshay Malik"
 tags: ["AI", "Deep Learning", "LLMs"] 
 ---
 
-### Attention is all you need: The Fundamental Breakthrough That Led to Modern AI
 
 ![Transformer Diagram](/images/blog1/img1.png)
 

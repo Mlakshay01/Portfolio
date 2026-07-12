@@ -13,6 +13,7 @@ import SocialSidebar from "./components/Sidebar";
 import Blogs from "./components/Blogs";
 import PostPage from "./components/PostPage";
 import BlogIndexPage from "./components/BlogIndexPage";
+import Analytics from "./components/Analytics";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,6 +110,7 @@ export default function App() {
 
     return (
         <Router> 
+            <Analytics/>
             {loading && <Loader setLoading={setLoading} />}
             
             {contentMounted && (

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import '../styles/PostPage.css';
+import remarkGfm from 'remark-gfm';
 
 // Use Vite's glob import to get ALL markdown files
 // Adjust the path if necessary (e.g., '../../content/blog/*.md')
@@ -88,7 +89,9 @@ const PostPage = () => {
             
             {/* ReactMarkdown renders the Markdown content as HTML */}
             <div className="post-content">
-                <ReactMarkdown>{postData.content}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+    {postData.content}
+</ReactMarkdown>
             </div>
         </article>
     );
