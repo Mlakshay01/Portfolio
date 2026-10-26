@@ -12,16 +12,6 @@ export default function Blogs() {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            // ---------- Check Cache ----------
-            const cachedPosts = sessionStorage.getItem("blogMetadata");
-
-            if (cachedPosts) {
-                const parsed = JSON.parse(cachedPosts);
-                setLatestPosts(parsed.latestPosts);
-                setTotalPostCount(parsed.totalPostCount);
-                return;
-            }
-
             try {
                 // ---------- Load All Markdown Files in Parallel ----------
                 const loadedPosts = await Promise.all(
@@ -44,19 +34,8 @@ export default function Blogs() {
                 // ---------- Sort Latest First ----------
                 loadedPosts.sort((a, b) => b.date - a.date);
 
-                const latest = loadedPosts.slice(0, 3);
-
-                setLatestPosts(latest);
+                setLatestPosts(loadedPosts.slice(0, 3));
                 setTotalPostCount(loadedPosts.length);
-
-                // ---------- Cache ----------
-                sessionStorage.setItem(
-                    "blogMetadata",
-                    JSON.stringify({
-                        latestPosts: latest,
-                        totalPostCount: loadedPosts.length,
-                    })
-                );
             } catch (err) {
                 console.error("Failed to load blog posts:", err);
             }
